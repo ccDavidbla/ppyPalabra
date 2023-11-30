@@ -1,6 +1,7 @@
 let intento = 6
-let palabra = "APPLE"
-
+let diccionario= ["CINCO", "MESSI", "MISIO", "HIJOS", "HIGOS"]
+let palabra = diccionario[Math.floor(Math.random()* diccionario.length)];
+console.log(palabra)
 const BUTTON = document.getElementById("guess-button")
 
 BUTTON. addEventListener("click", intentar);
@@ -19,29 +20,26 @@ function intentar(){
     }
     for ( i in palabra){
     const  SPAN= document.createElement("span");
-    SPAN.className= "letter";
+    SPAN.className= "letter"; 
 
         if( palabra [i]=== INTENTO[i]){
-            SPAN.style.background = "green";
+            SPAN.style.background = "#79b851";
             SPAN.innerHTML = INTENTO[i]
-
-        console.log ( INTENTO[ i ], "green");
         } else if ( palabra.includes(INTENTO[i])){
-            SPAN.style.background = "yellow";
+            SPAN.style.background = "#f3c237";
             SPAN.innerHTML = INTENTO[i]
-            console.log (INTENTO[i], "yellow")
         } else{
-            SPAN.style.background = "gray";
+            SPAN.style.background = "#a4aec4";
             SPAN.innerHTML = INTENTO[i]
-            console.log ( INTENTO[i], "gray")
         }
         ROW.appendChild(SPAN)
 
     }
     GRID.appendChild(ROW)
-    if (intento===palabra){
-        terminar("<h1>GANASTE!!!:)</h1>")
-        
+
+    if(palabra[i]===INTENTO[i]){
+        terminar("<h1>GANASTE :)</h1>")
+        return
     }
     intento--
     if(intento === 0){
